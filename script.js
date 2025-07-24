@@ -1,1 +1,1 @@
-alert("code fixed"));
+alert("code fixed");
