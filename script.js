@@ -1,1 +1,5 @@
-alert("js error fixed");
+function sayHello(name) {
+  console.log("Hello, " + name);
+}
+
+sayHello("CI/CD");
