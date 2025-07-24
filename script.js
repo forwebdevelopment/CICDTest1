@@ -1,1 +1,1 @@
-alert("this js file")
+console.log(_("this js file")
