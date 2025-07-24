@@ -1,1 +1,1 @@
-alert("js error fixed")
+alert("js error fixed");
