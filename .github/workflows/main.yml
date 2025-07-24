@@ -20,5 +20,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Validate index.html
+      - name: Fix permissions for html-validator
+        run: chmod +x node_modules/.bin/html-validator
+
+      - name: Validate HTML files
         run: npx html-validator --file=index.html --verbose
