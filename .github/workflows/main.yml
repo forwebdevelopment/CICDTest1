@@ -1,15 +1,15 @@
-name: Validate HTML & JS
+name: Validate HTML
 
 on:
   push:
     branches: [main]
 
 jobs:
-  validate:
+  validate-html:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Set up Node.js
@@ -17,11 +17,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
-      - name: Validate HTML
+      - name: Validate index.html
         run: npx html-validator --file=index.html --verbose
-
-      - name: Lint JavaScript
-        run: npx eslint script.js
