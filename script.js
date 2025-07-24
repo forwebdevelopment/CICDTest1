@@ -1,1 +1,1 @@
-console.log("error")
+alert("js error fixed")
