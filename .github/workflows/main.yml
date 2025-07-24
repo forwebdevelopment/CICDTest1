@@ -1,24 +1,30 @@
-name: Validate HTML
+name: Validate HTML and JS
 
 on:
   push:
     branches: [main]
 
 jobs:
-  validate-html:
+  validate:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Set Up Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install HTML Validator
-        run: npm install -g html-validator-cli
+      - name: Install HTML Validator and ESLint
+        run: |
+          npm install -g html-validator-cli
+          npm install
+          npx eslint script.js
 
-      - name: Validate index.html
-        run: html-validator --file=index.html --verbose
+      - name: Validate HTML Files
+        run: |
+          for file in *.html; do
+            echo "Validating $file"
+            html-validator --file="$file" --verbose
+          done
