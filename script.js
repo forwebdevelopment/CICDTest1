@@ -1,1 +1,1 @@
-console.log("Now Js Error works")
+console.log("error")
